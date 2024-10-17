@@ -1,0 +1,64 @@
+/* src/RankingHeader.css */
+
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif; /* Use Arial for clean font style */
+}
+@font-face{
+    font-family: ultra;
+    src: url(../public/gill-sans-ultra-bold.ttf);
+}
+
+.ranking-header-container {
+    font-family: ultra;
+    display: flex;
+    align-items: center;
+    background-color: #ffe066; /* Matching yellow background color */
+    padding: 10px 20px;
+    border-radius: 8px; /* Rounded corners similar to the design */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow effect */
+    border: 2px solid #333; /* Border to match the style */
+    
+}
+
+.ranking-header-title {
+    font-size: 24px; /* Font size similar to the screenshot */
+    font-weight: bold;
+    margin: 0;
+    margin-right: auto; /* Pushes the tabs to the right */
+    color: white; /* White text color */
+    text-shadow: -1px -1px 0 #000,  
+                 1px -1px 0 #000,
+                 -1px 1px 0 #000,
+                 1px 1px 0 #000; /* Creates a black outline effect around the text */
+}
+
+.ranking-header-tabs {
+    display: flex;
+    gap: 10px; /* Space between the buttons */
+}
+
+.ranking-tab-button {
+    background-color: #ffeb99; /* Light yellow background for buttons */
+    border: 2px solid #333; /* Dark border for the button */
+    border-radius: 5px; /* Slightly rounded corners */
+    padding: 5px 15px;
+    cursor: pointer;
+    font-size: 14px;
+    color: white; /* White text color */
+    text-shadow: -1px -1px 0 #000,  
+                 1px -1px 0 #000,
+                 -1px 1px 0 #000,
+                 1px 1px 0 #000; /* Creates a black background effect around the text */
+    box-shadow: 2px 2px #aaa; /* Shadow for 3D effect */
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.ranking-tab-button.active {
+    background-color: #a0e1ff; /* Blue color for the active button */
+}
+
+.ranking-tab-button:hover {
+    background-color: #f1c40f; /* Darker yellow on hover */
+    box-shadow: 3px 3px #888; /* Enhanced shadow on hover */
+}

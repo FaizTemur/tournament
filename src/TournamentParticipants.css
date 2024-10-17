@@ -1,0 +1,101 @@
+body {
+    background-color: #5b5e60;
+    font-family: 'Arial', sans-serif;
+}
+
+@font-face {
+    font-family: 'BebasNeue';
+    src: url('../public/BebasNeue-Regular.ttf') format('truetype');
+}
+
+.teams-container {
+    max-width: 900px;
+    margin: 40px auto 40px 20px;
+    padding: 10px;
+    background-color: #f78877; /* Coral-like background color */
+    border-radius: 8px;
+    border: 3px solid #f78877;
+}
+
+.teams-title {
+    text-align: left;
+    font-size: 24px;
+    color: #ffffff;
+    text-transform: uppercase;
+    margin: 15px 10px;
+    -webkit-text-stroke: 1px #000000;
+    text-shadow: 2px 2px 0 #000000;
+}
+
+.teams-table {
+    width: 100%;
+    font-family: 'BebasNeue', sans-serif; /* Use the custom font */
+    border-collapse: separate;
+    border-spacing: 0 10px; /* Adds vertical spacing between rows */
+    background-color: #fff3e2; /* Light background color */
+}
+
+.teams-table thead {
+    background-color: #f6d7c5; /* Header background color */
+    color: #333;
+}
+
+.teams-table th, .teams-table td {
+    border: 1px solid #e4b7a3; /* Light border color */
+    padding: 25px 30px; /* Increased padding for more spacing inside cells */
+    text-align: center;
+    font-size: 18px; /* Slightly larger font size */
+    color: #000000; /* Black font color */
+    background-color: #fffcf4; /* Pale color background inside cells */
+}
+
+.teams-table th {
+    font-weight: bold;
+    color: #333;
+    text-transform: uppercase;
+}
+
+.teams-table td {
+    font-size: 18px; /* Adjusted font size */
+    color: #000000;
+    padding: 20px 30px; /* Added more padding to make rows/columns more spacious */
+}
+
+.teams-table tr {
+    background-color: #fff8f0; /* Light peach color for rows */
+}
+
+.teams-table tr:nth-child(even) {
+    background-color: #ffedd4; /* Slightly different peach color for even rows */
+}
+
+.teams-table tr:hover {
+    background-color: #ffe5cc; /* Coral-like hover effect */
+}
+
+.error, .loading {
+    text-align: center;
+    font-size: 18px;
+    color: #ff6f61;
+    margin: 20px 0;
+}
+
+.tab-button {
+    background-color: #ffe681;
+    color: #333;
+    padding: 10px 15px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px 5px 0 0;
+    transition: background-color 0.3s;
+    margin: 0 5px;
+}
+
+.tab-button.active {
+    background-color: #b3d4fc;
+    color: #fff;
+}
+
+.tab-button:hover {
+    background-color: #ffc857;
+}
