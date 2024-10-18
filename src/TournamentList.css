@@ -1,0 +1,92 @@
+/* General page container */
+.tournament-list-container {
+    text-align: center;
+    padding: 40px;
+    background-color: #8dd3eb; /* Matches the light blue background */
+    font-family: 'Arial', sans-serif; /* Adjust font to match the style */
+}
+
+/* Header section styling */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #35709d; /* Matches the dark blue header background */
+    border-radius: 10px;
+}
+
+.header h1 {
+    color: #ffffff;
+    font-size: 32px;
+    font-weight: bold;
+}
+
+/* Create button style */
+.create-tournament-btn {
+    background-color: #2ecc71; /* Matches the green button */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+/* Grid layout for tournaments */
+.tournament-grid {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding-top: 20px;
+}
+
+/* Individual tournament card */
+.tournament-card {
+    width: 250px;
+    height: 300px;
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px;
+    transition: transform 0.3s ease;
+}
+
+/* Placeholder for the tournament image */
+.tournament-image-placeholder {
+    width: 200px;
+    height: 150px;
+    background-color: #333; /* Placeholder dark color */
+    margin-bottom: 10px;
+}
+
+/* Tournament info styling */
+.tournament-info {
+    text-align: center;
+    font-size: 14px;
+}
+
+.tournament-name {
+    font-size: 16px;
+    margin: 10px 0;
+}
+
+.tournament-type {
+    font-size: 14px;
+    color: #777;
+}
+
+/* No tournaments message */
+.no-tournaments {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.no-tournaments p {
+    margin-bottom: 20px;
+}

@@ -1,8 +1,7 @@
-/* src/RankingHeader.css */
 
 body {
     margin: 0;
-    font-family: 'Arial', sans-serif; /* Use Arial for clean font style */
+    font-family: 'Arial', sans-serif; 
 }
 @font-face{
     font-family: ultra;
@@ -13,19 +12,19 @@ body {
     font-family: ultra;
     display: flex;
     align-items: center;
-    background-color: #ffe066; /* Matching yellow background color */
+    background-color: #ffe066;
     padding: 10px 20px;
-    border-radius: 8px; /* Rounded corners similar to the design */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow effect */
-    border: 2px solid #333; /* Border to match the style */
+    border-radius: 8px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border: 2px solid #333; 
     
 }
 
 .ranking-header-title {
-    font-size: 24px; /* Font size similar to the screenshot */
+    font-size: 24px; 
     font-weight: bold;
     margin: 0;
-    margin-right: auto; /* Pushes the tabs to the right */
+    margin-right: auto; 
     color: white; /* White text color */
     text-shadow: -1px -1px 0 #000,  
                  1px -1px 0 #000,

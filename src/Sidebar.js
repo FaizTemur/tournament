@@ -1,18 +1,20 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
+import { getFirestore, collection, getDocs } from "firebase/firestore";
 
 const SidebarContainer = styled.div`
   position: fixed;
   right: 0;
-  width: 240px; /* Adjusted width */
+  width: 240px;
   height: 100%;
-  background-color: #67d17b; /* Matched green background */
+  background-color: #67d17b;
   padding: 20px;
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 25px; /* Increased gap for better spacing */
+  gap: 25px;
 `;
 
 const Button = styled.button`
@@ -24,44 +26,89 @@ const Button = styled.button`
   background-color: ${props => props.bgColor};
   border: none;
   border-radius: 5px;
-  box-shadow: 5px 5px 0px #000; /* Increased shadow to make it stand out more */
+  box-shadow: 5px 5px 0px #000;
   cursor: pointer;
   text-align: center;
 `;
 
 const SelectBox = styled.div`
   width: 200px;
-  height: auto; /* Adjust height to fit content */
-  background-color: #b5e3b2; /* Light green background */
+  background-color: #b5e3b2;
   padding: 15px;
   border-radius: 10px;
   display: flex;
   flex-direction: column;
-  gap: 15px; /* Increase gap between round buttons */
+  gap: 15px;
 `;
 
 const RoundButton = styled(Button)`
-  background-color: #fff; /* White background for round buttons */
+  background-color: #fff;
   color: #000;
-  box-shadow: 0px 0px 0px; /* Remove shadow */
-  border: 2px solid #000; /* Added solid black border */
+  box-shadow: 0px 0px 0px;
+  border: 2px solid #000;
 `;
 
-const Sidebar = () => {
+const Sidebar = ({ onRoundSelect }) => {
+  const [completedRounds, setCompletedRounds] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    const fetchRounds = async () => {
+      const db = getFirestore();
+      const prelimsCollection = collection(db, "tournaments", "TOURNEY_0_AVNT", "PreLim");
+      const querySnapshot = await getDocs(prelimsCollection);
+
+      const rounds = [];
+
+      querySnapshot.forEach((doc) => {
+        const data = doc.data();
+        if (data.roundState === 2) {
+          rounds.push({
+            id: doc.id,
+            ...data,
+          });
+        }
+      });
+
+      setCompletedRounds(rounds);
+      setLoading(false);
+    };
+
+    fetchRounds();
+  }, []);
+
+  const handleRoundClick = (round) => {
+    const teamName = round.teamName || `Team for Round ${round.id}`;
+    onRoundSelect(teamName); // Pass the selected team name back to the parent
+  };
+
+  const handleParticipantsClick = () => {
+    navigate('/rankings'); // Navigate to the Rankings page
+  };
+
+  const handleSpeakersClick = () => {
+    navigate('/speakers'); // Navigate to the Speakers page
+  };
+
   return (
     <SidebarContainer>
       <Button bgColor="#ff6f61">ALL ROUNDS</Button>
       <SelectBox>
-        <RoundButton>ROUND 4</RoundButton>
-        <RoundButton>ROUND 4</RoundButton>
-        <RoundButton>ROUND 5</RoundButton>
-        <RoundButton>ROUND 4</RoundButton>
-        <RoundButton>ROUND 5</RoundButton>
-        <RoundButton>QF</RoundButton>
-        <RoundButton>SF</RoundButton>
+        {loading ? (
+          <p>Loading...</p>
+        ) : completedRounds.length === 0 ? (
+          <p>No Rounds Completed</p>
+        ) : (
+          completedRounds.map((round, index) => (
+            <RoundButton key={round.id} onClick={() => handleRoundClick(round)}>
+              {`Round ${index + 1}`}
+            </RoundButton>
+          ))
+        )}
       </SelectBox>
-      <Button bgColor="#ff6f61">TEAMS</Button>
-      <Button bgColor="#f7cbc8">SPEAKERS</Button>
+      <Button bgColor="#ff6f61" onClick={handleParticipantsClick}>PARTICIPANTS</Button>
+      <Button bgColor="#f7cbc8" onClick={handleSpeakersClick}>SPEAKERS</Button>
     </SidebarContainer>
   );
 };

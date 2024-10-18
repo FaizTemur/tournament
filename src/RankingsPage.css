@@ -1,0 +1,77 @@
+/* RankingsPage.css */
+
+body {
+    font-family: 'Roboto', sans-serif; /* Simple, modern font */
+    background-color: #2e3039; /* The dark grey background for the page */
+  }
+  
+  .toggle-buttons {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+    background-color: #d4b13a; /* Yellow color for the top bar */
+    padding: 10px;
+    border-radius: 0; /* No border-radius to match the style */
+  }
+  
+  button {
+    margin: 0 10px;
+    padding: 10px 20px;
+    background-color: #2babe2; /* Blue for inactive button */
+    border: none;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 5px;
+    box-shadow: none; /* Flat design */
+  }
+  
+  button:hover {
+    background-color: #1895c7; /* Darker blue on hover */
+  }
+  
+  button.active {
+    background-color: #d4b13a; /* Yellow for active button */
+    color: black;
+  }
+  
+  .table {
+    background-color: #f2685d; /* Red background for the table */
+    padding: 20px;
+    border-radius: 10px;
+    border: none; /* Flat design, no borders */
+  }
+  
+  .table h3 {
+    text-align: center;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    margin-bottom: 20px;
+  }
+  
+  .table-row {
+    display: flex;
+    justify-content: space-between;
+    background-color: #f3f3f3; /* Light grey background for rows */
+    padding: 15px;
+    border-radius: 10px;
+    margin: 5px 0;
+    border: 2px solid black; /* Black borders for table rows */
+  }
+  
+  .table-row span {
+    width: 33%;
+    text-align: center;
+    color: black;
+    font-weight: bold;
+    font-size: 16px;
+    text-transform: uppercase; /* All caps for names */
+  }
+  .table-header {
+    font-weight: bold;
+    background-color: #f1f1f1; /* Light gray background */
+    padding: 10px;
+  }
+  
+  

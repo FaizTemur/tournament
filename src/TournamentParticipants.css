@@ -12,7 +12,7 @@ body {
     max-width: 900px;
     margin: 40px auto 40px 20px;
     padding: 10px;
-    background-color: #f78877; /* Coral-like background color */
+    background-color: #f78877; 
     border-radius: 8px;
     border: 3px solid #f78877;
 }
@@ -29,10 +29,10 @@ body {
 
 .teams-table {
     width: 100%;
-    font-family: 'BebasNeue', sans-serif; /* Use the custom font */
+    font-family: 'BebasNeue', sans-serif; 
     border-collapse: separate;
-    border-spacing: 0 10px; /* Adds vertical spacing between rows */
-    background-color: #fff3e2; /* Light background color */
+    border-spacing: 0 10px;
+    background-color: #fff3e2;  /* Light background color */
 }
 
 .teams-table thead {

@@ -1,23 +1,18 @@
-// fetchData.js
-import { collection, getDocs } from 'firebase/firestore'; // Import Firestore functions
-import { db } from './firebaseConfig'; // Import the initialized Firestore instance
+import { collection, getDocs } from 'firebase/firestore'; 
+import { db } from './firebaseConfig'; 
 
-// Function to fetch participants data from Firestore
 export const fetchParticipants = async () => {
   try {
-    // Reference the 'Participants' collection in Firestore
     const participantsCollection = collection(db, 'Participants');
     
-    // Get all the documents from the 'Participants' collection
     const participantSnapshot = await getDocs(participantsCollection);
     
-    // Map through the documents and return their data
     const participantList = participantSnapshot.docs.map(doc => doc.data());
     
     return participantList; // Return the list of participants
   } catch (error) {
     console.error("Error fetching participants:", error);
-    throw error; // Rethrow error if needed to handle it elsewhere
+    throw error; 
   }
 };
 

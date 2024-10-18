@@ -1,0 +1,86 @@
+/* Speakers List Container */
+.speakers-list {
+    max-width: 1000px; /* Increase max-width for better scaling */
+    margin: auto;
+    background-color: #ff8976;
+    border-radius: 8px;
+    padding: 16px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Heading Styles */
+  h2 {
+    text-align: center;
+    color: white;
+    font-size: 1.5rem;
+    margin-bottom: 12px; /* Reduce margin to make it more compact */
+  }
+  
+  /* Table Container */
+  .table-container {
+    background: #e53e30;
+    border-radius: 8px;
+    padding: 8px; /* Reduce padding for a tighter fit */
+  }
+  
+  /* Header Row */
+  .table-header {
+    display: flex;
+    justify-content: space-between;
+    background-color: #ff6f61;
+    color: white;
+    padding: 8px;
+    font-weight: bold;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 0.9rem; /* Slightly reduce font size for compactness */
+  }
+  
+  /* Speaker Row */
+  .speaker-row {
+    display: flex;
+    justify-content: space-between;
+    background-color: #f0f0f0;
+    margin: 4px 0; /* Reduce margin for more compact rows */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 6px; /* Reduce padding for a tighter layout */
+    font-size: 0.85rem; /* Smaller font size to fit more content */
+  }
+  
+  /* Column Styling */
+  .rank,
+  .speaker-name,
+  .team-name,
+  .round-scores,
+  .total-speaker-score,
+  .header-rank,
+  .header-speaker-name,
+  .header-team-name,
+  .header-round-scores,
+  .header-total-speaker-score {
+    flex: 1;
+    text-align: center;
+    padding: 4px; /* Reduced padding inside cells */
+  }
+  
+  /* Specific Styling for the Rank and Scores */
+  .rank {
+    font-weight: bold;
+    color: #e53e30;
+  }
+  
+  .total-speaker-score {
+    font-weight: bold;
+    color: #e53e30;
+  }
+  
+  /* Round Scores Flex Layout */
+  .round-scores {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+  }
+  

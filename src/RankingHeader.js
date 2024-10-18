@@ -1,6 +1,5 @@
-// src/RankingHeader.js
 import React from 'react';
-import './RankingHeader.css'; // Make sure to create this CSS file
+import './RankingHeader.css'; 
 
 const RankingHeader = () => {
     return (
